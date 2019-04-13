@@ -43,7 +43,7 @@ function processEvent(event, context, callback) {
             });
         }
         else {
-            getDoc(cachedDb, jsonContents, callback);
+            return getDoc(cachedDb, jsonContents, callback);
         }
     }
     catch (err) {
@@ -61,7 +61,8 @@ function getDoc (db, json, callback) {
         //result.forEach(function(value) {
         //  console.log("Device: " + JSON.stringify(value));
         //});
-        callback(null, result);
+        // just assume you will find one and only one
+        callback(null, result[0]);
       }
       //we don't need to close the connection thanks to context.callbackWaitsForEmptyEventLoop = false (above)
       //this will let our function re-use the connection on the next called (if it can re-use the same Lambda container)
