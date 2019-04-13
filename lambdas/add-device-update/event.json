@@ -1,0 +1,9 @@
+{
+  "make": "Apple",
+  "model": "iPhone",
+  "publish_date": "2019-01-01T00:00:00Z",
+  "type": "phone",
+  "version": "iOS 12.2",
+  "description": "latest and greatest",
+  "update_id": "0"
+}

@@ -1,0 +1,23 @@
+{
+  "name": "poh-mobile",
+  "version": "1.0.0",
+  "description": "ping of health",
+  "main": "index.js",
+  "dependencies": {
+    "mongodb": "^3.2.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ping-of-health/poh-mobile.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ping-of-health/poh-mobile/issues"
+  },
+  "homepage": "https://github.com/ping-of-health/poh-mobile#readme"
+}
