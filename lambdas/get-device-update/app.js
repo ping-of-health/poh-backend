@@ -13,7 +13,7 @@ exports.handler = (event, context, callback) => {
     }
     else {
         atlas_connection_uri = uri;
-        //console.log('the Atlas connection string is ' + atlas_connection_uri);
+        console.log('the Atlas connection string is ' + atlas_connection_uri);
         processEvent(event, context, callback);
     }
 };
@@ -52,14 +52,16 @@ function processEvent(event, context, callback) {
 }
 
 function getDoc (db, json, callback) {
-  db.collection('device_updates').find( json, function(err, result) {
+  db.collection('device_updates').find(json).toArray(function(err, result) {
       if(err!=null) {
           console.error("an error occurred in getDoc", err);
           callback(null, JSON.stringify(err));
       }
       else {
-        console.log("Entry: " + result[0]);
-        callback(null, "SUCCESS");
+        //result.forEach(function(value) {
+        //  console.log("Device: " + JSON.stringify(value));
+        //});
+        callback(null, result);
       }
       //we don't need to close the connection thanks to context.callbackWaitsForEmptyEventLoop = false (above)
       //this will let our function re-use the connection on the next called (if it can re-use the same Lambda container)
