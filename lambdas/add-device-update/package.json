@@ -4,7 +4,7 @@
   "description": "ping of health",
   "main": "index.js",
   "dependencies": {
-    "mongodb": "^3.2.3"
+    "mongodb": "^3.3.0"
   },
   "devDependencies": {},
   "scripts": {
